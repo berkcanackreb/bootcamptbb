@@ -1,0 +1,26 @@
+  
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bootcamp-html
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: bootcamp-html
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: bootcamp-html
+    spec:
+      containers:
+      - name: bootcamp-html
+        image: oguzzarci/k8sdeploymentwithhelm:Jenkins-${BUILD_NUMBER}
+        ports:
+        - containerPort: 80
