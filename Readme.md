@@ -10,6 +10,11 @@ https://the.earth.li/~sgtatham/putty/latest/w64/putty-64bit-0.74-installer.msi
 ![VirtualBox](./1.png)
 ![VirtualBox](./2.png)
 
+# Install GitBash
+```
+https://git-scm.com/download/win
+```
+
 # Jenkins
 ```
 sudo apt-get install openjdk-8-jdk
@@ -58,3 +63,6 @@ minikube start --cpus 4 --driver=virtualbox
 Minikube hata verirse.
 bcdedit /set hypervisorlaunchtype off
 ```
+
+## Others
+* https://lingojam.com/TexttoOneLine
