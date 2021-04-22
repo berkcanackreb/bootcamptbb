@@ -36,10 +36,17 @@ sudo ufw allow 22/tcp
 sudo ufw allow 8443/tcp
 ```
 
+## Jenkins IP and Default Pasword
+```
+http://localhost:8080
+
+cat /var/lib/jenkins/secrets/initialAdminPassword
+```
 
 ### Jenkins Plugins
 * CloudBees Docker Build and Publish
-* 
+
+
 
 # Docker Install
 ```
