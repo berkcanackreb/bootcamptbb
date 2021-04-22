@@ -35,10 +35,7 @@ sudo ufw default deny
 sudo ufw allow 22/tcp
 sudo ufw allow 8443/tcp
 ```
-```
-Jenkins user'ın docker grubuna eklenmesi
-sudo usermod -aG docker jenkins
-```
+
 
 ### Jenkins Plugins
 * CloudBees Docker Build and Publish
@@ -51,6 +48,12 @@ sudo apt-get upgrade
 
 curl https://releases.rancher.com/install-docker/19.03.sh | sh
 ```
+
+```
+Jenkins user'ın docker grubuna eklenmesi
+sudo usermod -aG docker jenkins
+```
+
 # Kubectl Install
 ```
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
