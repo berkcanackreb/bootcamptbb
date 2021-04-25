@@ -21,6 +21,6 @@ spec:
     spec:
       containers:
       - name: bootcamp-html
-        image: oguzzarci/k8sdeploymentwithhelm:Jenkins-${BUILD_NUMBER}
+        image: oguzzarci/k8sdeploymentwithhelm:v${BUILD_NUMBER}
         ports:
         - containerPort: 80
