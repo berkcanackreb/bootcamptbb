@@ -116,4 +116,8 @@ kubectl create namespace prod
 
 
 ## Others
+* Delete docker images
+```
+docker images -a | grep "days" | awk '{print $3}' | xargs docker rmi -f
+```
 * https://lingojam.com/TexttoOneLine
