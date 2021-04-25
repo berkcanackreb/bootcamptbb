@@ -3,7 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: bootcamp-html
-  namespace: default
+  namespace: dev
 spec:
   selector:
     matchLabels:
