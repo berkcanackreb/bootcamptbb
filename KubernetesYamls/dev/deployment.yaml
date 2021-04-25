@@ -21,6 +21,6 @@ spec:
     spec:
       containers:
       - name: bootcamp-html
-        image: oguzzarci/babootcamp:vbuildNumber
+        image: oguzzarci/babootcamp:v$buildNumber
         ports:
         - containerPort: 80
