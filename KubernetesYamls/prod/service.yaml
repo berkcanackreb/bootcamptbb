@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: bootcamp-html
-  namespace: default
+  namespace: prod
 spec:
   selector:
     app: bootcamp-html
