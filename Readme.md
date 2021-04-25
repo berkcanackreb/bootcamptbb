@@ -88,5 +88,32 @@ Minikube hata verirse.
 bcdedit /set hypervisorlaunchtype off
 ```
 
+# Jenkins User
+```
+Jenkins User Home: /var/lib/jenkins
+su jenkins
+cd
+mkdir .kube
+cd .kube
+vi config
+Copy  configfile
+[ESC] :wq!
+
+Test için;
+kubeclt get nodes
+
+NAME       STATUS   ROLES                  AGE   VERSION
+minikube   Ready    control-plane,master   20d   v1.20.2
+
+```
+
+# Kubernetes
+```
+kubectl create namespace dev
+kubectl create namespace test
+kubectl create namespace prod
+```
+
+
 ## Others
 * https://lingojam.com/TexttoOneLine
