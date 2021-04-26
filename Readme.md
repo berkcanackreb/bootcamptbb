@@ -45,6 +45,7 @@ cat /var/lib/jenkins/secrets/initialAdminPassword
 
 ### Jenkins Plugins
 * CloudBees Docker Build and Publish
+* SonarQube Scanner
 
 
 
@@ -112,6 +113,11 @@ minikube   Ready    control-plane,master   20d   v1.20.2
 kubectl create namespace dev
 kubectl create namespace test
 kubectl create namespace prod
+```
+
+# SonarQube Start
+```
+docker run -d -v ${pwd}:/root/src --name sonarqube -p 9000:9000 -p 9092:9092 sonarqube
 ```
 
 
