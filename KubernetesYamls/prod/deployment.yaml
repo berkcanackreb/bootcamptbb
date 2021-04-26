@@ -8,7 +8,7 @@ spec:
   selector:
     matchLabels:
       app: bootcamp-html
-  replicas: 1
+  replicas: 3
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -21,6 +21,6 @@ spec:
     spec:
       containers:
       - name: bootcamp-html
-        image: oguzzarci/babootcamp:v${BUILD_NUMBER}
+        image: oguzzarci/babootcamp:v$DOCKER_BUILD_NUMBER
         ports:
         - containerPort: 80
