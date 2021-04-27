@@ -43,7 +43,7 @@ http://localhost:8080
 cat /var/lib/jenkins/secrets/initialAdminPassword
 ```
 
-### Jenkins Plugins
+## Jenkins Plugins
 * CloudBees Docker Build and Publish
 * SonarQube Scanner
 
