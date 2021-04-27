@@ -1,0 +1,52 @@
+node {
+    stage("Git Clone"){
+    git credentialsId: 'GIT_HUB_CREDENTIALS',url:'https://github.com/oguzzarci/forbootcamp.git'
+    }
+    stage("Docker Build"){
+    sh 'docker build -t oguzzarci/babootcamp:v${BUILD_NUMBER} .'
+    sh 'docker images'
+    }
+    stage("Docker Login"){
+    withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'DOCKER_HUB',
+    usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
+
+    sh 'docker login -u $USERNAME -p $PASSWORD'
+    }
+    }
+    stage("Docker Push"){
+    sh 'docker push oguzzarci/babootcamp:v${BUILD_NUMBER}'
+}
+    stage("Kubernetes DEV Deployment"){
+    
+    script {
+        env.DOCKER_BUILD_NUMBER="${BUILD_NUMBER}"
+    }
+    
+    sh 'echo ${DOCKER_BUILD_NUMBER}'
+    sh 'envsubst < ./KubernetesYamls/dev/deployment.yaml | kubectl apply -f -'
+    sh 'kubectl apply -f ./KubernetesYamls/dev/service.yaml'
+}
+
+    stage("Kubernetes Test Deployment"){
+    
+    script {
+        env.DOCKER_BUILD_NUMBER="${BUILD_NUMBER}"
+    }
+    
+    sh 'echo ${DOCKER_BUILD_NUMBER}'
+    sh 'envsubst < ./KubernetesYamls/test/deployment.yaml | kubectl apply -f -'
+    sh 'kubectl apply -f ./KubernetesYamls/test/service.yaml'
+}
+
+    stage("Kubernetes PROD Deployment"){
+    
+    script {
+        env.DOCKER_BUILD_NUMBER="${BUILD_NUMBER}"
+    }
+    
+    sh 'echo ${DOCKER_BUILD_NUMBER}'
+    sh 'envsubst < ./KubernetesYamls/prod/deployment.yaml | kubectl apply -f -'
+    sh 'kubectl apply -f ./KubernetesYamls/prod/service.yaml'
+}
+
+}

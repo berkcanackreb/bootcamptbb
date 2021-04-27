@@ -1,0 +1,22 @@
+node {
+    stage("Git Clone"){
+    git credentialsId: 'GIT_HUB_CREDENTIALS',url:'https://github.com/oguzzarci/forbootcamp.git'
+    }
+    stage("Docker Build"){
+    sh 'docker build -t oguzzarci/babootcamp:v${BUILD_NUMBER} .'
+    sh 'docker images'
+    }
+    stage("Docker Login"){
+    withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'DOCKER_HUB',
+    usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
+
+    sh 'docker login -u $USERNAME -p $PASSWORD'
+    }
+    }
+    stage("Docker Push"){
+    sh 'docker push oguzzarci/babootcamp:v${BUILD_NUMBER}'
+}
+    stage("Kubernetes Deployment"){
+    echo "Deployment OK"
+}
+}

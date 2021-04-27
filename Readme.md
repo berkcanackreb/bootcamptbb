@@ -45,7 +45,9 @@ cat /var/lib/jenkins/secrets/initialAdminPassword
 
 ## Jenkins Plugins
 * CloudBees Docker Build and Publish
+![CloudBees Docker Build and Publish](./dockerplugin.png)
 * SonarQube Scanner
+![SonarQube Scanner](./sonarplugin.png)
 
 
 
