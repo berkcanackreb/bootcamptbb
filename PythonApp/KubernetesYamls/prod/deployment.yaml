@@ -1,0 +1,26 @@
+  
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bootcamp-python
+  namespace: prod
+spec:
+  selector:
+    matchLabels:
+      app: bootcamp-python
+  replicas: 3
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: bootcamp-python
+    spec:
+      containers:
+      - name: bootcamp-python
+        image: oguzzarci/bootcamppython:v$DOCKER_BUILD_NUMBER
+        ports:
+        - containerPort: 5000
