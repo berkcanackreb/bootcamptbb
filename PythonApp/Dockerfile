@@ -1,7 +1,8 @@
 FROM python:alpine3.10
 WORKDIR /app 
-COPY ./requirements.txt /app/requirements.txt
-RUN pip install -r requirements.txt
+#COPY requirements.txt /app/requirements.txt
+#RUN pip install -r requirements.txt
+RUN pip install flask
 COPY . /app
 CMD ["python", "./launch.py"]
 EXPOSE 5000
