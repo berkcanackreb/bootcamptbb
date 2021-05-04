@@ -117,6 +117,7 @@ kubectl create namespace test
 kubectl create namespace prod
 ```
 
+
 # SonarQube Start
 ```
 docker run -d -v ${pwd}:/root/src --name sonarqube -p 9000:9000 -p 9092:9092 sonarqube
@@ -129,3 +130,4 @@ docker run -d -v ${pwd}:/root/src --name sonarqube -p 9000:9000 -p 9092:9092 son
 docker images -a | grep "days" | awk '{print $3}' | xargs docker rmi -f
 ```
 * https://lingojam.com/TexttoOneLine
+* ip route add 192.168.99.0/24 dev enp0s3
