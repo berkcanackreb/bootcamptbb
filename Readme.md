@@ -71,7 +71,7 @@ sudo touch /etc/apt/sources.list.d/kubernetes.list
 echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
 sudo apt-get update
 sudo apt-get install -y kubectl
-reboot
+sudo reboot
 ```
 
 # Choco Install
@@ -132,3 +132,4 @@ docker images -a | grep "days" | awk '{print $3}' | xargs docker rmi -f
 ```
 * https://lingojam.com/TexttoOneLine
 * ip route add 192.168.99.0/24 dev enp0s3
+
