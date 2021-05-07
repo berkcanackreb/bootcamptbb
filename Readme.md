@@ -132,4 +132,9 @@ docker images -a | grep "days" | awk '{print $3}' | xargs docker rmi -f
 ```
 * https://lingojam.com/TexttoOneLine
 * ip route add 192.168.99.0/24 dev enp0s3
-
+  
+  Open the command line
+  Set your username:
+  git config --global user.name "serkan.tasci"
+  Set your email address:
+  git config --global user.email "aliserkantasci@gmail.com"
