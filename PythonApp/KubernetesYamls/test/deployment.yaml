@@ -21,6 +21,6 @@ spec:
     spec:
       containers:
       - name: bootcamp-python
-        image: oguzzarci/bootcamppython:v$DOCKER_BUILD_NUMBER
+        image: aliserkantasci/python:v$DOCKER_BUILD_NUMBER
         ports:
         - containerPort: 5000
