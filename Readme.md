@@ -8,7 +8,7 @@ https://the.earth.li/~sgtatham/putty/latest/w64/putty-64bit-0.74-installer.msi
 ```
 # Create VirtualBox Ubuntu VM
 ![VirtualBox](./1.png)
-![VirtualBox](./2.png)
+![VirtualBox](./bootcamp_2.png)
 
 # Install GitBash
 ```
