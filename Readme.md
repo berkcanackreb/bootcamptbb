@@ -121,7 +121,8 @@ kubectl create namespace prod
 
 # SonarQube Start
 ```
-docker run -d -v ${pwd}:/root/src --name sonarqube -p 9000:9000 -p 9092:9092 sonarqube
+mkdir $HOME/sonarqube-test
+docker run -d -v $(pwd)/sonarqube-test:/root/src --name sonarqube -p 9000:9000 -p 9092:9092 sonarqube
 ```
 
 
